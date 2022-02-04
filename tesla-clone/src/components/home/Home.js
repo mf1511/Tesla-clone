@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../header/Header";
 import Section from "../section/Section";
+import Fade from "react-reveal";
 import("./Home.css");
 
 function Home() {

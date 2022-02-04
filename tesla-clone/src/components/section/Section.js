@@ -1,20 +1,32 @@
+import { Fade } from "react-reveal";
 import React from "react";
 import styled from "styled-components";
 import("./Section.css");
 
-function Section({ title, photoUrl, description, leftBtnText, rightBtnText }) {
+function Section({
+  title,
+  photoUrl,
+  description,
+  leftBtnText,
+  rightBtnText,
+  id,
+}) {
   return (
     <>
-      <Wrap style={{ backgroundImage: `url(${photoUrl})` }}>
-        <ItemText>
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </ItemText>
+      <Wrap id={title} style={{ backgroundImage: `url(${photoUrl})` }}>
+        <Fade bottom>
+          <ItemText>
+            <h1>{title}</h1>
+            <p>{description}</p>
+          </ItemText>
+        </Fade>
         <ButtonsGroup>
-          <ButtonGroup>
-            <LeftButton>{leftBtnText}</LeftButton>
-            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-          </ButtonGroup>
+          <Fade bottom>
+            <ButtonGroup>
+              <LeftButton>{leftBtnText}</LeftButton>
+              {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+            </ButtonGroup>
+          </Fade>
           <DownArrow src="https://res.cloudinary.com/marin-dev/image/upload/v1643917938/down-arrow_fndgln.svg" />
         </ButtonsGroup>
       </Wrap>
@@ -27,6 +39,7 @@ export default Section;
 
 const Wrap = styled.div`
   width: 100vw;
+  z-index: 10;
   height: 100vh;
   background-size: cover;
   background-position: center;
