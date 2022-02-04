@@ -94,14 +94,15 @@ const Menu = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 100px;
   a {
     font-weight: 500;
     text-transform: uppercase;
     padding: 0 10px;
     flex-wrap: nowrap;
-    font-size: 25px;
+    font-size: 18px;
   }
-  @media (max-width: 1040px) {
+  @media (max-width: 1070px) {
     display: none;
     font-size: 15px;
   }
@@ -117,7 +118,7 @@ const RightMenu = styled.div`
     font-weight: 500;
     text-transform: uppercase;
     margin-right: 10px;
-    font-size: 25px;
+    font-size: 18px;
     @media (max-width: 1040px) {
       font-size: 20px;
     }
